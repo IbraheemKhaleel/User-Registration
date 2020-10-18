@@ -51,7 +51,7 @@ public class UserRegistration
     // method for entry of password
     public void passwordEntry()
     {
-        System.out.println("Enter your password with minimum 8 alphabets, one upper cases and one numeric ");
+        System.out.println("Enter your password with minimum 8 alphabets, one upper cases, one numeric and exactly one special character ");
         String password = sc.next();
         String passwordRegex = "^(?=.*[A-Z])" +  "(?=.*[!@#$%^&*]){1}" + "(?=.*[0-9]).{8,}$";
         Pattern pattern = Pattern.compile(passwordRegex);
@@ -61,6 +61,7 @@ public class UserRegistration
     //Main function
     public static void main(String[] args)
     {
+    	System.out.println("Welcome to user registartion program  ");
         UserRegistration userRegistration = new UserRegistration();
         userRegistration.firstNameEntry();
         userRegistration.secondNameEntry();
