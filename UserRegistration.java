@@ -37,12 +37,23 @@ public class UserRegistration
         Matcher match = pattern.matcher(email);
         System.out.println(email + "  " + match.matches());
     }
+    // method for entry of mobile number
+    public void mobileNumberEntry()
+    {
+        System.out.println("Enter your 10 digit mobile number with country code followed by space ");
+        String mobileNumber = sc.next();
+        String mobileNumberRegex = "^[1-9][0-9][ ][6-9][0-9]{9}$";
+        Pattern pattern;
+        pattern = Pattern.compile(mobileNumberRegex);
+        Matcher match = pattern.matcher(mobileNumber);
+        System.out.println(mobileNumber + "  " + match.matches());
+    }
     // method for entry of password
     public void passwordEntry()
     {
-        System.out.println("Enter your password with minimum 8 alphabets ");
+        System.out.println("Enter your password with minimum 8 alphabets and one upper cases ");
         String password = sc.next();
-        String passwordRegex = "^[a-zA-Z]{8,}$";
+        String passwordRegex = "^(?=.*[A-Z]).{8,20}$";
         Pattern pattern = Pattern.compile(passwordRegex);
         Matcher match = pattern.matcher(password);
         System.out.println(password + "  " + match.matches());
@@ -54,6 +65,7 @@ public class UserRegistration
         userRegistration.firstNameEntry();
         userRegistration.secondNameEntry();
         userRegistration.emailEntry();
+        userRegistration.mobileNumberEntry();
         userRegistration.passwordEntry();
     }
 }
