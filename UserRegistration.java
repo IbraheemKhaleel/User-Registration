@@ -31,7 +31,7 @@ public class UserRegistration
     {
         System.out.println("Enter your email ");
         String email = sc.next();
-        String emailRegex = "^[a-zA-Z.]{3,}[@][a-zA-Z]{2}[.][a-z]{2}[.][a-z]{2}$";
+        String emailRegex = "^[A-Za-z0-9]+([-\\\\.\\\\+\\\\_][0-9A-Za-z]+)*[@][A-Za-z0-9]+.[a-zA-Z]{2,4}([\\\\.\\\\,][a-z]{2,3})?$";
         Pattern pattern;
         pattern = Pattern.compile(emailRegex);
         Matcher match = pattern.matcher(email);
